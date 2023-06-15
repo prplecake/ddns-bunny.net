@@ -5,6 +5,10 @@ on:
     types: [ published ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  packages: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
