@@ -8,6 +8,10 @@
         <AssemblyName>ddns-bunny.net</AssemblyName>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DebugType>none</DebugType>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
           <PrivateAssets>all</PrivateAssets>
