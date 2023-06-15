@@ -41,9 +41,16 @@ public static class Program
         var zone = dnsClient.GetDnsZoneByName(config.ZoneName).Result;
 
         // Update record in Bunny DNS
+        var record = zone.Records.First(r => r.Name.ToLower() == config.RecordName);
+        if (record.Value.Equals(currentIp))
+        {
+            _logger.Information("Current IP matches DNS Record value. Not updating");
+            return 0;
+        }
+        _logger.Information("Updating record: {Record}", $"{record}.{zone}");
         dnsClient.UpdateDnsRecord(
             zone.Id,
-            zone.Records.First(r => r.Name.ToLower() == config.RecordName),
+            record,
             currentIp
         );
         return 0;
