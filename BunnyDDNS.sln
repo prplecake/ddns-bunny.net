@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9AA31BE-E63D-4F97-A083-D7A2397D10B9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AF90ECC4-E7AC-4078-B78A-591549F2BD7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BunnyDDNS.CLI", "src\BunnyDDNS.CLI\BunnyDDNS.CLI.csproj", "{E911673C-BC06-4110-BC81-C677A5B73050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BunnyDDNS.Core", "src\BunnyDDNS.Core\BunnyDDNS.Core.csproj", "{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI Workflows", "CI Workflows", "{DB76B003-A5A9-4DC6-A508-5CA92CFA55C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E911673C-BC06-4110-BC81-C677A5B73050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E911673C-BC06-4110-BC81-C677A5B73050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E911673C-BC06-4110-BC81-C677A5B73050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E911673C-BC06-4110-BC81-C677A5B73050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E911673C-BC06-4110-BC81-C677A5B73050} = {AF90ECC4-E7AC-4078-B78A-591549F2BD7D}
+		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE} = {AF90ECC4-E7AC-4078-B78A-591549F2BD7D}
+		{DB76B003-A5A9-4DC6-A508-5CA92CFA55C8} = {B9AA31BE-E63D-4F97-A083-D7A2397D10B9}
+	EndGlobalSection
+EndGlobal
