@@ -62,7 +62,7 @@ jobs:
           dotnet-version: 7.0.x
       - name: Publish CLI (${{matrix.rid}})
         run: |
-          dotnet publish src/BunnyDDNS.CLI/BUNNYDDNS.CLI.csproj -c Release -r ${{matrix.rid}} --self-contained -p:PublishSingleFile=true -p:PublishReadyToRun=true
+          dotnet publish src/BunnyDDNS.CLI/BunnyDDNS.CLI.csproj -c Release -r ${{matrix.rid}} --self-contained -p:PublishSingleFile=true -p:PublishReadyToRun=true
           zip -j ddns-bunny.net-${{ github.ref_name }}-${{matrix.rid}}.zip src/BunnyDDNS.CLI/bin/Release/net7.0/${{matrix.rid}}/publish/* README.md LICENSE
       - name: Release
         uses: softprops/action-gh-release@v1
