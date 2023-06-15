@@ -2,7 +2,7 @@
 
 A utility to update a record in Bunny DNS with the current IP address.
 
-This project is NOT affiliated with Bunny.net in any way.
+This project is not affiliated with Bunny.net in any way.
 
 ## Usage
 
