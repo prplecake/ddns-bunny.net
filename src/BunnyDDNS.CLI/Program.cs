@@ -1,4 +1,4 @@
-﻿using BunnyDDNS.CLI.Api.Bunny;
+﻿using Bunny.NET.Client;
 using BunnyDDNS.Core.Configuration;
 using BunnyDDNS.Core.Utilities;
 using Serilog;
@@ -37,8 +37,8 @@ public static class Program
         _logger.Information("Current IP: {Ip}", currentIp);
 
         // Find record in Bunny DNS
-        var dnsClient = new DnsApiClient(config);
-        var zone = dnsClient.GetDnsZoneByName(config.ZoneName).Result;
+        var dnsClient = new BunnyClient(config.Bunny.AccessToken);
+        var zone = dnsClient.GetZoneByName(config.ZoneName).Result;
 
         // Update record in Bunny DNS
         var record = zone.Records.First(r => r.Name.ToLower() == config.RecordName);
@@ -48,7 +48,7 @@ public static class Program
             return 0;
         }
         _logger.Information("Updating record: {Record}", $"{record}.{zone}");
-        dnsClient.UpdateDnsRecord(
+        dnsClient.UpdateRecord(
             zone.Id,
             record,
             currentIp
