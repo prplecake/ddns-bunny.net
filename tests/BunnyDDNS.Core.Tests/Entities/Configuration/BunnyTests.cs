@@ -1,5 +1,3 @@
-using BunnyDDNS.Core.Configuration;
-
 namespace BunnyDDNS.Core.Tests.Entities.Configuration;
 
 [TestClass]
