@@ -33,14 +33,16 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
-      # - name: Test
-      #   run: dotnet test --no-build --verbosity normal --logger "trx" --results-directory "./TestResults"
-      # - uses: dorny/test-reporter@v1
-      #   if: always()
-      #   with:
-      #     name: .NET Test Results
-      #     path: TestResults/*.trx
-      #     reporter: dotnet-trx
+      - name: Test
+        run: dotnet test --no-build --verbosity normal --logger "trx" --results-directory "./TestResults" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[BunnyDDNS.*.Tests?]*"
+      - uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: .NET Test Results
+          path: TestResults/*.trx
+          reporter: dotnet-trx
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
   
   publish:
     strategy:

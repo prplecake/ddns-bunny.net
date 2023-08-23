@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI Workflows", "CI Workflow
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3A9D1D08-B841-4B39-BA39-0F9DC5082676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BunnyDDNS.Core.Tests", "tests\BunnyDDNS.Core.Tests\BunnyDDNS.Core.Tests.csproj", "{1CBBB815-C3EC-4C79-BE7C-8086C8EC5592}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +37,15 @@ Global
 		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CBBB815-C3EC-4C79-BE7C-8086C8EC5592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBBB815-C3EC-4C79-BE7C-8086C8EC5592}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBBB815-C3EC-4C79-BE7C-8086C8EC5592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBBB815-C3EC-4C79-BE7C-8086C8EC5592}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E911673C-BC06-4110-BC81-C677A5B73050} = {AF90ECC4-E7AC-4078-B78A-591549F2BD7D}
 		{DA42E939-8887-4D79-B5FB-753DB3FE2EAE} = {AF90ECC4-E7AC-4078-B78A-591549F2BD7D}
 		{DB76B003-A5A9-4DC6-A508-5CA92CFA55C8} = {B9AA31BE-E63D-4F97-A083-D7A2397D10B9}
+		{1CBBB815-C3EC-4C79-BE7C-8086C8EC5592} = {3A9D1D08-B841-4B39-BA39-0F9DC5082676}
 	EndGlobalSection
 EndGlobal
