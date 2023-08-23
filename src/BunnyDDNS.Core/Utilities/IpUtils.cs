@@ -5,7 +5,7 @@ namespace BunnyDDNS.Core.Utilities;
 
 public class IpUtils
 {
-    private static HttpClient Client = new();
+    private static HttpClient Client;
     public IpUtils(HttpClient client)
     {
         // Setup HttpClient
