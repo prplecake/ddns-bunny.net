@@ -31,8 +31,11 @@ public static class Program
         _logger.Debug("Getting configuration");
         var config = SetupConfiguration();
 
+        // Create HttpClient
+        var httpClient = new HttpClient();
+
         // Get current IP address
-        var _ipUtils = new IpUtils();
+        var _ipUtils = new IpUtils(httpClient);
         string currentIp = _ipUtils.GetCurrentIp();
         _logger.Information("Current IP: {Ip}", currentIp);
 
