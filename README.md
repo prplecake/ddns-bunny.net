@@ -1,3 +1,7 @@
+[![.NET](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet.yml/badge.svg)](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet.yml)
+[![.NET Release](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet-release.yml/badge.svg)](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet-release.yml)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/prplecake/ddns-bunny.net?include_prereleases)](https://github.com/prplecake/ddns-bunny.net/releases/latest)
+
 # ddns-bunny.net
 
 A utility to update a record in Bunny DNS with the current IP address.
