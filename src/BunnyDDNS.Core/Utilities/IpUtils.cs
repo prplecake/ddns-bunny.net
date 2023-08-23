@@ -5,12 +5,13 @@ namespace BunnyDDNS.Core.Utilities;
 
 public class IpUtils
 {
-    private static readonly HttpClient Client = new();
-    public IpUtils()
+    private static HttpClient Client = new();
+    public IpUtils(HttpClient client)
     {
         // Setup HttpClient
-        Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MediaTypeNames.Application.Json));
-        Client.DefaultRequestHeaders.UserAgent.Add(Meta.UserAgent);
+        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(MediaTypeNames.Application.Json));
+        client.DefaultRequestHeaders.UserAgent.Add(Meta.UserAgent);
+        Client = client;
     }
     public string GetCurrentIp()
     {
