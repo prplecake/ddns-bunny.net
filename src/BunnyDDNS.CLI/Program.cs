@@ -40,7 +40,8 @@ public static class Program
         _logger.Information("Current IP: {Ip}", currentIp);
 
         // Find record in Bunny DNS
-        var dnsClient = new BunnyClient(config.Bunny.AccessToken);
+        var dnsClient = new BunnyClient();
+        dnsClient.SetApiKey(config.Bunny.AccessToken);
         var zone = dnsClient.GetZoneByName(config.ZoneName).Result;
 
         // Update record in Bunny DNS
@@ -51,11 +52,8 @@ public static class Program
             return 0;
         }
         _logger.Information("Updating record: {Record}", $"{record}.{zone}");
-        dnsClient.UpdateRecord(
-            zone.Id,
-            record,
-            currentIp
-        );
+        record.Value = currentIp;
+        dnsClient.UpdateRecord(zone.Id, record);
         return 0;
     }
     private static Config SetupConfiguration()
