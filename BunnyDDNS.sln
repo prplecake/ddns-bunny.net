@@ -15,7 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BunnyDDNS.Core", "src\Bunny
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI Workflows", "CI Workflows", "{DB76B003-A5A9-4DC6-A508-5CA92CFA55C8}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\dotnet-release.yml = .github\workflows\dotnet-release.yml
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
