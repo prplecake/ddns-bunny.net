@@ -1,4 +1,4 @@
-﻿using Bunny.NET.Client;
+﻿using Bunny.API.NET.Client;
 using BunnyDDNS.Core.Configuration;
 using BunnyDDNS.Core.Utilities;
 using Serilog;
