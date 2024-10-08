@@ -13,7 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bunny.API.NET" Version="0.1.0" />
+        <PackageReference Include="Bunny.API.NET" Version="0.1.1" />
         <PackageReference Include="GitVersion.MsBuild" Version="6.0.2">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
