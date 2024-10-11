@@ -89,3 +89,42 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ddns-bunny.net-*.zip
+
+  test-release:
+    strategy:
+      matrix:
+        rid: [
+          linux-x64, linux-arm64,
+          win-x64, osx-x64,
+        ]
+    runs-on: ubuntu-latest
+    name: Test Release (${{matrix.rid}})
+    needs: publish
+    permissions:
+      contents: write
+      packages: read
+    steps:
+      - name: Download release
+        uses: robinraju/release-downloader@v1
+        with:
+          latest: true
+          fileName: ddns-bunny.net-${{ github.ref_name }}-${{ matrix.rid }}.zip
+          extract: true
+          out-file-path: release
+      - name: Test Release Package
+        id: testReleasePackage
+        run: |
+          cd release; ls
+          count=$(ls | wc -l)
+          if [ $count -ne $EXPECTED_COUNT ]; then
+            echo "Expected $EXPECTED_COUNT files, found $count"
+            exit 1
+          fi
+        env:
+          EXPECTED_COUNT: 5
+      - name: Delete Release
+        if: always() && (steps.testReleasePackage.outcome == 'failure')
+        run: |
+          gh release delete ${{ github.ref_name }} --yes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
