@@ -42,7 +42,9 @@ jobs:
           cd release
           ls
           count=$(ls | wc -l)
-          if [ $count -ne 4 ]; then
-            echo "Expected 4 files, found $count"
+          if [ $count -ne $EXPECTED_COUNT ]; then
+            echo "Expected $EXPECTED_COUNT files, found $count"
             exit 1
           fi
+        env:
+          EXPECTED_COUNT: 5
