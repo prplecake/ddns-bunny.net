@@ -100,6 +100,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Release (${{matrix.rid}})
     needs: publish
+    permissions:
+      contents: write
+      packages: read
     steps:
       - name: Download release
         uses: robinraju/release-downloader@v1
@@ -108,7 +111,9 @@ jobs:
           fileName: ddns-bunny.net-${{ github.ref_name }}-${{ matrix.rid }}.zip
           extract: true
           out-file-path: release
-      - run: |
+      - name: Test Release Package
+        id: testReleasePackage
+        run: |
           cd release; ls
           count=$(ls | wc -l)
           if [ $count -ne $EXPECTED_COUNT ]; then
@@ -117,3 +122,9 @@ jobs:
           fi
         env:
           EXPECTED_COUNT: 5
+      - name: Delete Release
+        if: always() && (steps.testReleasePackage.outcome == 'failure')
+        run: |
+          gh release delete ${{ github.ref_name }} --yes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
