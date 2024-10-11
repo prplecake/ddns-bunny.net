@@ -1,5 +1,4 @@
 [![.NET](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet.yml/badge.svg)](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet.yml)
-[![.NET Release](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet-release.yml/badge.svg)](https://github.com/prplecake/ddns-bunny.net/actions/workflows/dotnet-release.yml)
 [![codecov](https://codecov.io/gh/prplecake/ddns-bunny.net/graph/badge.svg?token=YGCvx1G8e9)](https://codecov.io/gh/prplecake/ddns-bunny.net)
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/prplecake/ddns-bunny.net?include_prereleases)](https://github.com/prplecake/ddns-bunny.net/releases/latest)
 
