@@ -36,3 +36,13 @@ jobs:
           # fileName: ddns-bunny.net-${{ matrix.rid }}.zip
           fileName: ddns-bunny.net-1.0.3-${{ matrix.rid }}.zip
           extract: true
+          out-file-path: release
+      - run: |
+          ls
+          cd release
+          ls
+          count=$(ls | wc -l)
+          if [ $count -ne 4 ]; then
+            echo "Expected 4 files, found $count"
+            exit 1
+          fi
